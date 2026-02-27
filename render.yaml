@@ -3,7 +3,7 @@ services:
     name: au-central-reporting
     runtime: docker
     dockerfilePath: backend/Dockerfile
-    dockerContext: backend
+    dockerContext: .
     envVars:
       - key: SUPABASE_URL
         sync: false

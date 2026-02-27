@@ -6,8 +6,11 @@ into actionable insights for evidence-based decision-making across the
 African Union's 55 member states and 20 Agenda 2063 goals.
 """
 
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 import structlog
 
@@ -76,6 +79,15 @@ app.add_middleware(
 app.include_router(api_router, prefix=settings.API_PREFIX or "/api/v1")
 
 
+# Serve frontend static files if available
+frontend_dir = Path(__file__).parent.parent.parent / "frontend"
+if not frontend_dir.exists():
+    # Docker path
+    frontend_dir = Path("/frontend")
+if frontend_dir.exists():
+    app.mount("/app", StaticFiles(directory=str(frontend_dir), html=True), name="frontend")
+
+
 @app.get("/", tags=["root"])
 async def root():
     return {
@@ -83,5 +95,6 @@ async def root():
         "version": settings.API_VERSION or "1.0.0",
         "description": "Data intelligence platform for the African Union",
         "docs": "/docs",
+        "dashboard": "/app",
         "health": f"{settings.API_PREFIX or '/api/v1'}/health",
     }
