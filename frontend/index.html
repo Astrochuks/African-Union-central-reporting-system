@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AU Central Reporting System — Agenda 2063 Intelligence Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/au-theme.css">
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="#C8A415" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="20" r="12" stroke="#009A44" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="20" r="6" fill="#C8A415"/>
+        </svg>
+        <div>
+          <h2>AU Central Reporting<small>Agenda 2063 Intelligence</small></h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">Overview</div>
+        <div class="nav-item active" data-page="dashboard">
+          <span class="icon">📊</span> Dashboard
+        </div>
+        <div class="nav-item" data-page="agenda2063">
+          <span class="icon">🎯</span> Agenda 2063 Goals
+        </div>
+
+        <div class="nav-section">Analytics</div>
+        <div class="nav-item" data-page="gender-youth">
+          <span class="icon">⚖️</span> Gender & Youth
+        </div>
+        <div class="nav-item" data-page="insights">
+          <span class="icon">💡</span> Insights Engine
+        </div>
+        <div class="nav-item" data-page="countries">
+          <span class="icon">🌍</span> Member States
+        </div>
+
+        <div class="nav-section">Operations</div>
+        <div class="nav-item" data-page="pipeline">
+          <span class="icon">⚙️</span> Data Pipeline
+        </div>
+        <div class="nav-item" data-page="reports">
+          <span class="icon">📄</span> Reports
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div style="color: var(--au-gold); font-weight: 600; margin-bottom: 4px;">African Union</div>
+        <div>Data & Innovation Fellowship</div>
+        <div style="margin-top: 8px; font-size: 10px;">Built by Shedrack Emeka Ajakghe</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div>
+          <h1 id="page-title">Dashboard</h1>
+          <div class="subtitle" id="page-subtitle">Continental overview and key performance indicators</div>
+        </div>
+        <div class="top-bar-actions">
+          <button class="btn btn-sm btn-outline" onclick="api.getHealth().then(d => alert(JSON.stringify(d, null, 2)))">API Status</button>
+          <a class="btn btn-sm btn-primary" href="/docs" target="_blank">API Docs</a>
+        </div>
+      </header>
+
+      <div id="page-content" class="page-content">
+        <div class="loading"><div class="spinner"></div>Loading...</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

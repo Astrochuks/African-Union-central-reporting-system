@@ -1,0 +1,242 @@
+[
+  {
+    "code": "NY.GDP.PCAP.CD",
+    "name": "GDP per capita (current US$)",
+    "unit": "USD",
+    "source": "World Bank",
+    "goal_number": 1,
+    "baseline_year": 2013,
+    "target_value": 12000,
+    "description": "GDP per capita is gross domestic product divided by midyear population."
+  },
+  {
+    "code": "SI.POV.DDAY",
+    "name": "Poverty headcount ratio at $2.15/day (% of population)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 1,
+    "baseline_year": 2013,
+    "target_value": 0,
+    "description": "Percentage of population living on less than $2.15 per day at 2017 purchasing power parity."
+  },
+  {
+    "code": "SE.ADT.LITR.ZS",
+    "name": "Adult literacy rate (% ages 15+)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 2,
+    "baseline_year": 2013,
+    "target_value": 100,
+    "description": "Percentage of the population age 15 and above who can read and write."
+  },
+  {
+    "code": "SE.PRM.ENRR",
+    "name": "Primary school enrollment (% gross)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 2,
+    "baseline_year": 2013,
+    "target_value": 100,
+    "description": "Gross enrollment ratio in primary education."
+  },
+  {
+    "code": "SE.SEC.ENRR",
+    "name": "Secondary school enrollment (% gross)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 2,
+    "baseline_year": 2013,
+    "target_value": 100,
+    "description": "Gross enrollment ratio in secondary education."
+  },
+  {
+    "code": "SP.DYN.LE00.IN",
+    "name": "Life expectancy at birth (years)",
+    "unit": "years",
+    "source": "World Bank",
+    "goal_number": 3,
+    "baseline_year": 2013,
+    "target_value": 75,
+    "description": "Life expectancy at birth indicates the number of years a newborn infant would live."
+  },
+  {
+    "code": "SH.STA.MMRT",
+    "name": "Maternal mortality ratio (per 100,000 live births)",
+    "unit": "per 100,000",
+    "source": "World Bank",
+    "goal_number": 3,
+    "baseline_year": 2013,
+    "target_value": 50,
+    "description": "Number of women who die from pregnancy-related causes per 100,000 live births."
+  },
+  {
+    "code": "SH.DYN.MORT",
+    "name": "Under-5 mortality rate (per 1,000 live births)",
+    "unit": "per 1,000",
+    "source": "World Bank",
+    "goal_number": 3,
+    "baseline_year": 2013,
+    "target_value": 15,
+    "description": "Probability per 1,000 that a newborn baby will die before reaching age five."
+  },
+  {
+    "code": "NV.IND.MANF.ZS",
+    "name": "Manufacturing value added (% of GDP)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 4,
+    "baseline_year": 2013,
+    "target_value": 50,
+    "description": "Manufacturing refers to industries belonging to ISIC divisions 15-37."
+  },
+  {
+    "code": "BX.KLT.DINV.WD.GD.ZS",
+    "name": "Foreign direct investment, net inflows (% of GDP)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 4,
+    "baseline_year": 2013,
+    "target_value": null,
+    "description": "FDI net inflows as a percentage of GDP."
+  },
+  {
+    "code": "NV.AGR.TOTL.ZS",
+    "name": "Agriculture, value added (% of GDP)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 5,
+    "baseline_year": 2013,
+    "target_value": null,
+    "description": "Agriculture corresponds to ISIC divisions 1-5 and includes forestry, hunting, and fishing."
+  },
+  {
+    "code": "EN.ATM.CO2E.PC",
+    "name": "CO2 emissions (metric tons per capita)",
+    "unit": "metric tons",
+    "source": "World Bank",
+    "goal_number": 7,
+    "baseline_year": 2013,
+    "target_value": null,
+    "description": "Carbon dioxide emissions per capita from burning fossil fuels and manufacturing cement."
+  },
+  {
+    "code": "EG.FEC.RNEW.ZS",
+    "name": "Renewable energy consumption (% of total)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 7,
+    "baseline_year": 2013,
+    "target_value": 50,
+    "description": "Share of renewable energy in total final energy consumption."
+  },
+  {
+    "code": "IT.NET.USER.ZS",
+    "name": "Individuals using the Internet (% of population)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 10,
+    "baseline_year": 2013,
+    "target_value": 100,
+    "description": "Percentage of individuals who have used the Internet in the last 3 months."
+  },
+  {
+    "code": "IT.CEL.SETS.P2",
+    "name": "Mobile cellular subscriptions (per 100 people)",
+    "unit": "per 100",
+    "source": "World Bank",
+    "goal_number": 10,
+    "baseline_year": 2013,
+    "target_value": null,
+    "description": "Mobile cellular telephone subscriptions per 100 people."
+  },
+  {
+    "code": "EG.ELC.ACCS.ZS",
+    "name": "Access to electricity (% of population)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 10,
+    "baseline_year": 2013,
+    "target_value": 100,
+    "description": "Percentage of population with access to electricity."
+  },
+  {
+    "code": "SG.GEN.PARL.ZS",
+    "name": "Proportion of seats held by women in national parliament (%)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 17,
+    "baseline_year": 2013,
+    "target_value": 50,
+    "description": "Women in parliament as percentage of total seats."
+  },
+  {
+    "code": "SE.ENR.PRIM.FM.ZS",
+    "name": "Gender parity index (primary education)",
+    "unit": "ratio",
+    "source": "World Bank",
+    "goal_number": 17,
+    "baseline_year": 2013,
+    "target_value": 1.0,
+    "description": "Ratio of female to male gross enrollment in primary education."
+  },
+  {
+    "code": "SL.TLF.CACT.FE.ZS",
+    "name": "Female labor force participation rate (%)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 17,
+    "baseline_year": 2013,
+    "target_value": 50,
+    "description": "Proportion of the female population ages 15+ that is economically active."
+  },
+  {
+    "code": "SL.UEM.1524.ZS",
+    "name": "Youth unemployment rate (% ages 15-24)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 18,
+    "baseline_year": 2013,
+    "target_value": 6,
+    "description": "Youth unemployment refers to the share of labor force ages 15-24 without work."
+  },
+  {
+    "code": "SH.STA.BRTC.ZS",
+    "name": "Births attended by skilled health staff (%)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 3,
+    "baseline_year": 2013,
+    "target_value": 100,
+    "description": "Percentage of births attended by skilled health personnel."
+  },
+  {
+    "code": "GC.TAX.TOTL.GD.ZS",
+    "name": "Tax revenue (% of GDP)",
+    "unit": "%",
+    "source": "World Bank",
+    "goal_number": 20,
+    "baseline_year": 2013,
+    "target_value": null,
+    "description": "Tax revenue as a percentage of GDP for domestic resource mobilization."
+  },
+  {
+    "code": "SH.HIV.INCD.TL.P3",
+    "name": "Incidence of HIV (per 1,000 uninfected population)",
+    "unit": "per 1,000",
+    "source": "World Bank",
+    "goal_number": 3,
+    "baseline_year": 2013,
+    "target_value": 0,
+    "description": "Number of new HIV infections per 1,000 uninfected population."
+  },
+  {
+    "code": "SP.ADO.TFRT",
+    "name": "Adolescent fertility rate (births per 1,000 women ages 15-19)",
+    "unit": "per 1,000",
+    "source": "World Bank",
+    "goal_number": 17,
+    "baseline_year": 2013,
+    "target_value": null,
+    "description": "Number of births per 1,000 women ages 15-19."
+  }
+]

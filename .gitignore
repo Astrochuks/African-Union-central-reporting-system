@@ -1,0 +1,53 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+.next/
+out/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/raw/*.csv
+data/raw/*.xlsx
+
+# Claude
+.claude/
+
+# PDF outputs
+*.pdf
+!docs/*.pdf
+
+# PW system clone (reference only)
+PW_plant_management_system/
+
+# Text extracts (fellowship JD extracts)
+icd-full-stack-developer.txt
+mis-full-stack-developer.txt
+wgyd-full-stack-developer-1.txt
+wgyd-data-analyst-.txt
+odg-data-analyst.txt

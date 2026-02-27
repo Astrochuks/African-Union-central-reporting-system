@@ -1,0 +1,162 @@
+[
+  {
+    "number": 1,
+    "aspiration_number": 1,
+    "name": "A high standard of living, quality of life and well-being for all citizens",
+    "description": "Eradicate extreme poverty and reduce inequality through inclusive growth.",
+    "target_2063": "No person living below the poverty line; per capita income of $12,000+",
+    "world_bank_indicators": ["NY.GDP.PCAP.CD", "SI.POV.DDAY"]
+  },
+  {
+    "number": 2,
+    "aspiration_number": 1,
+    "name": "Well educated citizens and skills revolution underpinned by science, technology and innovation",
+    "description": "Ensure universal access to quality education and lifelong learning.",
+    "target_2063": "100% adult literacy; 70%+ tertiary enrollment",
+    "world_bank_indicators": ["SE.ADT.LITR.ZS", "SE.PRM.ENRR", "SE.SEC.ENRR"]
+  },
+  {
+    "number": 3,
+    "aspiration_number": 1,
+    "name": "Healthy and well-nourished citizens",
+    "description": "Ensure universal access to quality health care and nutrition.",
+    "target_2063": "Life expectancy of 75+ years; reduce maternal mortality to <50 per 100,000",
+    "world_bank_indicators": ["SP.DYN.LE00.IN", "SH.STA.MMRT", "SH.DYN.MORT"]
+  },
+  {
+    "number": 4,
+    "aspiration_number": 1,
+    "name": "Transformed economies",
+    "description": "Structural transformation of economies through industrialization and value addition.",
+    "target_2063": "Manufacturing as 50%+ of GDP; intra-African trade at 50%+",
+    "world_bank_indicators": ["NV.IND.MANF.ZS", "BX.KLT.DINV.WD.GD.ZS"]
+  },
+  {
+    "number": 5,
+    "aspiration_number": 1,
+    "name": "Modern agriculture for increased productivity and production",
+    "description": "Agricultural modernization for food security and prosperity.",
+    "target_2063": "Modernized agriculture with 10%+ annual growth in output",
+    "world_bank_indicators": ["NV.AGR.TOTL.ZS", "AG.LND.ARBL.ZS"]
+  },
+  {
+    "number": 6,
+    "aspiration_number": 1,
+    "name": "Blue/ocean economy for accelerated economic growth",
+    "description": "Harness marine and aquatic resources for sustainable economic growth.",
+    "target_2063": "Blue economy contributing significantly to continental GDP",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 7,
+    "aspiration_number": 1,
+    "name": "Environmentally sustainable and climate resilient economies and communities",
+    "description": "Build climate-resilient economies and communities.",
+    "target_2063": "Climate-resilient economies; 50%+ renewable energy",
+    "world_bank_indicators": ["EN.ATM.CO2E.PC", "EG.FEC.RNEW.ZS"]
+  },
+  {
+    "number": 8,
+    "aspiration_number": 2,
+    "name": "United Africa (Federal or Confederate)",
+    "description": "Accelerate political and economic integration towards a united Africa.",
+    "target_2063": "Continental financial and monetary institutions established",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 9,
+    "aspiration_number": 2,
+    "name": "Continental financial and monetary institutions established and functional",
+    "description": "Create continental financial institutions for economic integration.",
+    "target_2063": "African Central Bank, African Monetary Fund, African Investment Bank operational",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 10,
+    "aspiration_number": 2,
+    "name": "World-class infrastructure criss-crosses Africa",
+    "description": "Develop world-class infrastructure — transport, energy, ICT, water.",
+    "target_2063": "Universal broadband access; 100% electricity access",
+    "world_bank_indicators": ["IT.NET.USER.ZS", "IT.CEL.SETS.P2", "EG.ELC.ACCS.ZS"]
+  },
+  {
+    "number": 11,
+    "aspiration_number": 3,
+    "name": "Democratic values, practices, universal principles of human rights, justice and the rule of law entrenched",
+    "description": "Entrench democratic governance and human rights across the continent.",
+    "target_2063": "All AU member states upholding democratic governance and rule of law",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 12,
+    "aspiration_number": 3,
+    "name": "Capable institutions and transformative leadership in place",
+    "description": "Build capable, accountable institutions at all levels.",
+    "target_2063": "Effective, accountable, and transparent institutions at all levels",
+    "world_bank_indicators": ["IQ.CPA.GNDR.XQ"]
+  },
+  {
+    "number": 13,
+    "aspiration_number": 4,
+    "name": "Peace, security and stability is preserved",
+    "description": "Silence the guns and end all wars, civil conflicts, and violence.",
+    "target_2063": "A conflict-free Africa; all guns silenced",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 14,
+    "aspiration_number": 4,
+    "name": "A stable and peaceful Africa",
+    "description": "Maintain stability and peace through conflict prevention mechanisms.",
+    "target_2063": "Fully functional African Peace and Security Architecture",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 15,
+    "aspiration_number": 4,
+    "name": "A fully functional and operational African Peace and Security Architecture",
+    "description": "Operationalize the African Peace and Security Architecture.",
+    "target_2063": "Fully operational APSA with rapid response capability",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 16,
+    "aspiration_number": 5,
+    "name": "African cultural renaissance is pre-eminent",
+    "description": "Promote Pan-African cultural values, heritage and creative arts.",
+    "target_2063": "Vibrant creative industry contributing 5%+ to GDP",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 17,
+    "aspiration_number": 6,
+    "name": "Full gender equality in all spheres of life",
+    "description": "Achieve gender parity in political, economic, and social spheres.",
+    "target_2063": "50% women in public institutions; eliminate gender-based violence",
+    "world_bank_indicators": ["SG.GEN.PARL.ZS", "SE.ENR.PRIM.FM.ZS", "SL.TLF.CACT.FE.ZS"]
+  },
+  {
+    "number": 18,
+    "aspiration_number": 6,
+    "name": "Engaged and empowered youth and children",
+    "description": "Ensure youth are fully engaged, empowered and at the center of development.",
+    "target_2063": "Youth unemployment <6%; universal secondary education",
+    "world_bank_indicators": ["SL.UEM.1524.ZS", "SE.SEC.ENRR"]
+  },
+  {
+    "number": 19,
+    "aspiration_number": 7,
+    "name": "Africa as a major partner in global affairs and peaceful co-existence",
+    "description": "Ensure Africa is a strong partner in global governance.",
+    "target_2063": "Africa speaks with one voice on global issues; permanent UNSC seat",
+    "world_bank_indicators": []
+  },
+  {
+    "number": 20,
+    "aspiration_number": 7,
+    "name": "Africa takes full responsibility for financing her development",
+    "description": "Mobilize domestic resources and reduce dependency on external aid.",
+    "target_2063": "75%+ of development financing from domestic resources",
+    "world_bank_indicators": ["GC.TAX.TOTL.GD.ZS", "DT.ODA.ODAT.GN.ZS"]
+  }
+]
