@@ -267,7 +267,7 @@ This platform directly addresses documented challenges across AU departments:
 **Shedrack Emeka Ajakghe**
 Full Stack Data Analyst | Data Pipelines, Dashboards & Evidence-Based Intelligence
 
-- GitHub: [github.com/shedyyemeka](https://github.com/shedyyemeka)
+- GitHub: [github.com/Astrochuks](https://github.com/Astrochuks)
 - LinkedIn: [linkedin.com/in/shedrack-ajakghe-79484623b](https://www.linkedin.com/in/shedrack-ajakghe-79484623b)
 
 ---
