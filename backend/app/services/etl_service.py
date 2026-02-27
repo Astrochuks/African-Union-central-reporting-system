@@ -85,7 +85,7 @@ async def fetch_world_bank_indicator(
     }
 
     all_records = []
-    async with httpx.AsyncClient(timeout=60.0) as client:
+    async with httpx.AsyncClient(timeout=120.0) as client:
         try:
             resp = await client.get(url, params=params)
             resp.raise_for_status()
