@@ -166,13 +166,13 @@ After every data refresh, the **Insights Engine** analyzes all data and generate
 
 | Insight Type | Count | Example |
 |-------------|:-----:|---------|
-| **Findings** | 4 | "Only 15 of 55 states have >30% women in parliament" |
+| **Findings** | 5 | "Only 15 of 55 states have >30% women in parliament" |
 | **Alerts** | 3 | "3 countries have youth unemployment above critical threshold" |
-| **Milestones** | 7 | "Primary enrollment at 99.5% of Agenda 2063 target" |
-| **Comparisons** | 3 | "North Africa leads GDP ($4,123); East Africa lags ($1,087)" |
+| **Milestones** | 15 | "Primary enrollment at 99.5% of Agenda 2063 target" |
+| **Comparisons** | 4 | "North Africa leads GDP ($4,123); East Africa lags ($1,087)" |
 | **Recommendations** | 2 | "Prioritize youth employment in Southern Africa" |
 
-**19 actionable insights** generated automatically from 11,700+ data points across 55 countries and 24 indicators.
+**29 actionable insights** generated automatically from 23,100+ data points across 55 countries and 24 indicators.
 
 These are not static charts. They are **queryable, filterable, first-class database objects** that feed into dashboards, notifications, and executive reports.
 
@@ -219,7 +219,7 @@ AU-Branded Dashboard (Real-time KPIs, charts, executive reports)
 | Countries covered | **55** (all AU member states) |
 | Indicators tracked | **24** (mapped to Agenda 2063 goals) |
 | Time series depth | **25 years** (2000-2024) |
-| Total data points | **11,700+** |
+| Total data points | **23,100+** |
 | Gender metrics | **1,349** records |
 | Youth metrics | **1,322** records |
 

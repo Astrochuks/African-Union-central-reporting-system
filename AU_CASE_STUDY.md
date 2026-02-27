@@ -69,7 +69,7 @@ Built a pipeline that pulls **real data from the World Bank API** for all 55 AU 
 - **Gender/Youth specialty tables** — indicators like women in parliament, youth unemployment, gender parity automatically populate dedicated analytics tables
 - **Pipeline monitoring** — every ETL run is tracked with record counts, failure rates, and timestamps
 
-**Result:** 11,700+ verified data points loaded automatically — what would take weeks of manual compilation happens in minutes.
+**Result:** 23,100+ verified data points loaded automatically — what would take weeks of manual compilation happens in minutes.
 
 ### 2. Insights Engine (The Key Differentiator)
 
@@ -85,7 +85,7 @@ After every data refresh, 10 specialized generators analyze the data and create 
 | **Comparison** | Benchmarks regions against each other | "North Africa leads in GDP per capita ($4,123); East Africa lags ($1,087)" |
 | **Recommendation** | Suggests data-driven interventions | "Prioritize youth employment interventions in Southern Africa (5 countries above 25%)" |
 
-**19 insights generated automatically** from the current dataset — covering gender equality, youth employment, health, education, infrastructure, and economic development.
+**29 insights generated automatically** from the current dataset — covering gender equality, youth employment, health, education, infrastructure, and economic development.
 
 These insights are **first-class database objects** — they appear on dashboards, feed into executive reports, and can be queried, filtered, and analyzed programmatically.
 
@@ -132,11 +132,11 @@ Professional dashboard with AU official branding (Gold #C8A415, Green #009A44):
 
 | Metric | Value |
 |--------|-------|
-| **Data points loaded** | 11,700+ (from World Bank API) |
+| **Data points loaded** | 23,100+ (from World Bank API) |
 | **Countries covered** | 55 (all AU member states) |
 | **Indicators tracked** | 24 (mapped to Agenda 2063 goals) |
 | **Time series depth** | 25 years (2000-2024) |
-| **Insights auto-generated** | 19 (findings, alerts, milestones, recommendations) |
+| **Insights auto-generated** | 29 (findings, alerts, milestones, comparisons, recommendations) |
 | **API endpoints** | 35+ (all documented with Swagger) |
 | **Database tables** | 13 (with performance indexes) |
 | **Gender metrics** | 1,349 records (women in parliament, labor force, maternal mortality) |

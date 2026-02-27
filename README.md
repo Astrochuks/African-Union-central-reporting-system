@@ -26,7 +26,7 @@ Data Sources (World Bank, UN SDG, Manual Uploads)
     ↓
 ETL Pipeline (Extract, Clean, Validate, Load)
     ↓
-PostgreSQL Database (Supabase) -- 55 countries × 20+ indicators × 20+ years
+PostgreSQL Database (Supabase) -- 55 countries × 24 indicators × 25 years (23,100+ records)
     ↓
 Insights Engine (Auto-generates findings, alerts, trends, recommendations)
     ↓
