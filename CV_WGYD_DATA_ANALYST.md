@@ -6,6 +6,7 @@
 - Phone: +2349162225610
 - GitHub: [github.com/Astrochuks](https://github.com/Astrochuks)
 - Email: ajakgheshedrack@gmail.com
+- Portfolio: [shedrack-ai-dev-folio.lovable.app](https://shedrack-ai-dev-folio.lovable.app)
 
 ---
 
@@ -174,3 +175,17 @@ Evidence of "leaving projects better documented than found":
 - LLM Engineering — Udemy
 - Google Prompt Engineering — Google
 - Data Engineering
+
+---
+
+## LINKS FOR REVIEWERS
+
+| Resource | URL |
+|----------|-----|
+| **Portfolio Site** | [shedrack-ai-dev-folio.lovable.app](https://shedrack-ai-dev-folio.lovable.app) |
+| **AU Reporting System (source code + docs)** | [github.com/Astrochuks/African-Union-central-reporting-system](https://github.com/Astrochuks/African-Union-central-reporting-system) |
+| **PW Fleet Analytics (source code + docs)** | [github.com/Astrochuks/PW_plant_management_system](https://github.com/Astrochuks/PW_plant_management_system) |
+| **LinkedIn** | [linkedin.com/in/shedrack-ajakghe-79484623b](https://www.linkedin.com/in/shedrack-ajakghe-79484623b) |
+| **Google Analytics Certificate** | [skillshop.credential.net/c3a749a5](https://skillshop.credential.net/c3a749a5-805a-4807-904d-5773b45a3363) |
+
+*The AU Central Reporting System GitHub repository includes full architecture documentation, API reference, ETL pipeline guide, insights engine docs, database schema, user guide, case study, and executive slide deck.*
