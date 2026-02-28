@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useAuth } from "@/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,6 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const router = useRouter();
   const searchParams = useSearchParams();
   const { signIn } = useAuth();
 
@@ -23,16 +22,21 @@ function LoginForm() {
     setLoading(true);
     setError("");
 
-    const { error: authError } = await signIn(email, password);
-    if (authError) {
-      setError(authError);
-      setLoading(false);
-      return;
-    }
+    try {
+      const { error: authError } = await signIn(email, password);
+      if (authError) {
+        setError(authError);
+        setLoading(false);
+        return;
+      }
 
-    const redirect = searchParams.get("redirect") || "/dashboard";
-    router.push(redirect);
-    router.refresh();
+      const redirect = searchParams.get("redirect") || "/dashboard";
+      // Use window.location for a full page reload to pick up new auth state
+      window.location.href = redirect;
+    } catch {
+      setError("An unexpected error occurred. Please try again.");
+      setLoading(false);
+    }
   }
 
   return (

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useAuth } from "@/providers/auth-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +15,6 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  const router = useRouter();
   const { signUp } = useAuth();
 
   async function handleRegister(e: React.FormEvent) {
@@ -38,7 +36,7 @@ export default function RegisterPage() {
     }
 
     setSuccess(true);
-    setTimeout(() => router.push("/dashboard"), 1500);
+    setTimeout(() => { window.location.href = "/dashboard"; }, 1500);
   }
 
   return (

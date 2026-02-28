@@ -170,6 +170,7 @@ Evidence of "leaving projects better documented than found":
 
 ## CERTIFICATIONS
 
-- LLM Engineering (Udemy)
-- Google Prompt Engineering
+- [Google Analytics Certified](https://skillshop.credential.net/c3a749a5-805a-4807-904d-5773b45a3363) — Google Skillshop
+- LLM Engineering — Udemy
+- Google Prompt Engineering — Google
 - Data Engineering
