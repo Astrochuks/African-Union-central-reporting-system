@@ -142,11 +142,13 @@ These insights are **first-class database objects** -- they appear on dashboards
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Backend** | Python 3.11+, FastAPI | API server with async support |
+| **Frontend** | Next.js 14 (React/TypeScript), Tailwind CSS, Shadcn/ui, Recharts | 16-page AU-branded dashboard with auth |
+| **Backend** | Python 3.11+, FastAPI | API server with 50+ endpoints, async support |
 | **Database** | PostgreSQL via Supabase | Persistent data store with RLS |
+| **Authentication** | Supabase Auth (JWT) | Role-based access: admin, analyst, viewer |
 | **Data Processing** | Pandas, NumPy | ETL pipeline, data cleaning |
 | **HTTP Client** | httpx | World Bank API integration |
-| **Frontend** | HTML/CSS/JS, Plotly.js | AU-branded interactive dashboards |
+| **AI Chatbot** | Rule-based NLP + keyword extraction | Natural language queries against real data |
 | **Reports** | ReportLab, XlsxWriter | PDF and Excel report generation |
 | **Deployment** | Docker, Render | Containerized backend hosting |
 | **Version Control** | Git, GitHub | Source code management |
@@ -156,47 +158,70 @@ These insights are **first-class database objects** -- they appear on dashboards
 ## Project Structure
 
 ```
+├── frontend-next/                   # Next.js 14 frontend (primary)
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── (auth)/              # Login & Registration pages
+│   │   │   ├── (dashboard)/         # 16 dashboard pages
+│   │   │   │   ├── page.tsx         # Main dashboard (KPIs, insights)
+│   │   │   │   ├── agenda-2063/     # Goal tracking + detail views
+│   │   │   │   ├── gender-youth/    # WGYD gender & youth analytics
+│   │   │   │   ├── insights/        # AI-powered Insights Engine
+│   │   │   │   ├── countries/       # Member state profiles + scorecards
+│   │   │   │   ├── me-framework/    # M&E logframe view
+│   │   │   │   ├── data-quality/    # Data quality scoring dashboard
+│   │   │   │   ├── data-entry/      # Manual data submission forms
+│   │   │   │   ├── chat/            # AI Assistant chatbot
+│   │   │   │   ├── pipeline/        # ETL operations management
+│   │   │   │   ├── reports/         # Report generation & export
+│   │   │   │   └── guide/           # In-app user guide (6 sections)
+│   │   │   └── layout.tsx           # Root layout with AuthProvider
+│   │   ├── components/              # Reusable UI components
+│   │   │   ├── charts/              # Recharts wrappers (line, bar, donut, progress ring)
+│   │   │   ├── layout/              # Sidebar, Topbar
+│   │   │   └── ui/                  # Shadcn/ui components
+│   │   ├── lib/
+│   │   │   ├── api/                 # Typed API client (12 domain modules)
+│   │   │   ├── supabase/            # Supabase browser client
+│   │   │   ├── types/               # TypeScript interfaces (30+ types)
+│   │   │   └── utils/               # Formatters, colors, helpers
+│   │   ├── providers/               # Auth context provider
+│   │   └── middleware.ts            # Route protection (auth redirect)
+│   └── tailwind.config.ts           # AU brand colors & theme
 ├── backend/
 │   ├── app/
 │   │   ├── main.py                  # FastAPI application entry point
-│   │   ├── api/v1/                  # API route modules
-│   │   │   ├── router.py            # Route aggregation
-│   │   │   ├── dashboard.py         # KPI summary endpoint
-│   │   │   ├── goals.py             # Agenda 2063 goals
-│   │   │   ├── indicators.py        # Indicator time series
-│   │   │   ├── countries.py         # Member state profiles
-│   │   │   ├── gender.py            # Gender analytics
-│   │   │   ├── youth.py             # Youth analytics
+│   │   ├── api/v1/                  # API route modules (14 routers, 50+ endpoints)
+│   │   │   ├── chat.py              # AI chatbot (NLP keyword matching)
+│   │   │   ├── dashboard.py         # KPI summary + recent insights
+│   │   │   ├── goals.py             # Agenda 2063 goal tracking
+│   │   │   ├── gender.py            # Gender analytics (WGYD)
+│   │   │   ├── youth.py             # Youth analytics (WGYD)
 │   │   │   ├── insights.py          # Insights Engine
-│   │   │   ├── pipeline.py          # ETL operations
-│   │   │   ├── reports.py           # Report generation
-│   │   │   ├── upload.py            # Data upload
-│   │   │   └── health.py            # Health check
-│   │   ├── core/                    # Configuration, database
+│   │   │   ├── data_quality.py      # Data quality scoring
+│   │   │   ├── pipeline.py          # ETL operations (admin-only)
+│   │   │   ├── reports.py           # Report generation (analyst+)
+│   │   │   └── upload.py            # Data upload (analyst+)
+│   │   ├── core/
+│   │   │   ├── auth.py              # JWT validation + role-based middleware
+│   │   │   ├── config.py            # Environment configuration
+│   │   │   └── database.py          # Supabase client
 │   │   ├── services/                # Business logic layer
-│   │   │   ├── etl_service.py       # World Bank data extraction
-│   │   │   ├── insights_engine.py   # Automated insight generation
-│   │   │   ├── analytics_service.py # Data aggregation & trends
-│   │   │   ├── report_generator.py  # PDF/Excel reports
-│   │   │   └── data_quality.py      # Data validation
-│   │   └── models/                  # Pydantic schemas
+│   │   └── models/                  # Pydantic schemas (25+ models)
 │   ├── requirements.txt
 │   └── Dockerfile
-├── frontend/                        # AU-branded dashboard
-│   ├── index.html
-│   ├── pages/                       # Dashboard pages
-│   ├── css/au-theme.css             # AU official branding
-│   └── js/                          # API client, charts
-├── data/seed/                       # Seed data (aspirations, goals, countries)
-├── docs/                            # Architecture, API reference, guides
+├── frontend/                        # Legacy vanilla JS dashboard
+├── docs/                            # Comprehensive documentation
 │   ├── ARCHITECTURE.md
 │   ├── API_REFERENCE.md
 │   ├── ETL_PIPELINE.md
 │   ├── INSIGHTS_ENGINE.md
 │   ├── DATABASE_SCHEMA.md
 │   └── USER_GUIDE.md
-├── CASE_STUDY.md                    # Consulting-style case study
-├── SLIDE_DECK.md                    # Executive presentation
+├── AU_CASE_STUDY.md                 # AU platform case study
+├── AU_SLIDE_DECK.md                 # AU executive presentation
+├── CASE_STUDY.md                    # PW system case study
+├── SLIDE_DECK.md                    # PW executive presentation
 └── README.md                        # This file
 ```
 
@@ -206,6 +231,7 @@ These insights are **first-class database objects** -- they appear on dashboards
 
 ### Prerequisites
 - Python 3.11+
+- Node.js 18+
 - Supabase account (free tier works)
 - Git
 
@@ -221,13 +247,25 @@ cp .env.example .env
 # Edit .env with your Supabase credentials
 
 # Run the server
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8001
+```
+
+### Frontend Setup (Next.js)
+```bash
+cd frontend-next
+npm install
+
+# Configure environment
+# Create .env.local with NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+# Run the dev server
+npm run dev
 ```
 
 ### Access
-- **API Documentation**: http://localhost:8000/docs (Swagger UI)
-- **Frontend Dashboard**: Open `frontend/index.html` in browser
-- **Health Check**: http://localhost:8000/api/v1/health
+- **Frontend Dashboard**: http://localhost:3000 (login required)
+- **API Documentation**: http://localhost:8001/docs (Swagger UI)
+- **Health Check**: http://localhost:8001/api/v1/health
 
 ---
 
