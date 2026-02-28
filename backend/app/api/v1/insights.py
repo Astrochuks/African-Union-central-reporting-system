@@ -1,7 +1,8 @@
 """Insights Engine endpoints — auto-generated findings, alerts, trends."""
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, Depends
 from app.core.database import get_supabase
+from app.core.auth import require_analyst
 from app.services.insights_engine import generate_all_insights
 
 router = APIRouter(prefix="/insights", tags=["Insights Engine"])
@@ -105,7 +106,7 @@ async def insights_summary():
 
 
 @router.post("/generate")
-async def trigger_insight_generation():
+async def trigger_insight_generation(user: dict = Depends(require_analyst)):
     """Trigger the Insights Engine to regenerate all insights from current data."""
     result = await generate_all_insights()
     return result

@@ -3,9 +3,22 @@
  * Communicates with the FastAPI backend
  */
 
-const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-  ? 'http://localhost:8000/api/v1'
-  : '/api/v1'; // Production: same origin
+// Auto-detect API URL based on how the frontend is served
+const API_BASE = (() => {
+  const host = window.location.hostname;
+  const protocol = window.location.protocol;
+
+  // Opened as a local file (file://) — try local server
+  if (protocol === 'file:') {
+    return 'http://localhost:8001/api/v1';
+  }
+  // Running on localhost (dev) — use same port
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return `${window.location.origin}/api/v1`;
+  }
+  // Production — same origin
+  return '/api/v1';
+})();
 
 const api = {
   async get(endpoint) {

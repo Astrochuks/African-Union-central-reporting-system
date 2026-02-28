@@ -14,6 +14,7 @@ from app.api.v1 import (
     reports,
     upload,
     data_quality,
+    chat,
 )
 
 api_router = APIRouter()
@@ -30,3 +31,4 @@ api_router.include_router(pipeline.router)
 api_router.include_router(reports.router)
 api_router.include_router(upload.router)
 api_router.include_router(data_quality.router)
+api_router.include_router(chat.router)

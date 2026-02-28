@@ -1,8 +1,9 @@
 """Report Generation endpoints."""
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from app.core.database import get_supabase
+from app.core.auth import require_analyst
 from app.services.report_generator import (
     generate_executive_summary,
     generate_gender_brief,
@@ -15,7 +16,7 @@ router = APIRouter(prefix="/reports", tags=["Reports"])
 
 
 @router.post("/generate")
-async def generate_report(request: ReportGenerateRequest):
+async def generate_report(request: ReportGenerateRequest, user: dict = Depends(require_analyst)):
     """Generate a report based on type."""
     if request.report_type == "executive_summary":
         return await generate_executive_summary()

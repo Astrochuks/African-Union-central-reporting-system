@@ -1,7 +1,8 @@
 """Data Upload endpoints — Excel/CSV ingestion."""
 
-from fastapi import APIRouter, UploadFile, File
+from fastapi import APIRouter, UploadFile, File, Depends
 from app.core.database import get_supabase
+from app.core.auth import require_analyst
 import pandas as pd
 import io
 
@@ -9,7 +10,7 @@ router = APIRouter(prefix="/upload", tags=["Data Upload"])
 
 
 @router.post("/excel")
-async def upload_excel(file: UploadFile = File(...)):
+async def upload_excel(file: UploadFile = File(...), user: dict = Depends(require_analyst)):
     """
     Upload supplementary data from Excel/CSV files.
 
@@ -89,6 +90,69 @@ async def upload_excel(file: UploadFile = File(...)):
             "records_failed": 0,
             "errors": [str(e)],
         }
+
+
+@router.post("/form")
+async def submit_form_data(payload: dict, user: dict = Depends(require_analyst)):
+    """
+    Submit data entries via form (JSON).
+
+    Accepts: { "entries": [{ "country_iso": "NG", "indicator_code": "SG.GEN.PARL.ZS", "year": 2023, "value": 3.6 }] }
+    """
+    supabase = get_supabase()
+    entries = payload.get("entries", [])
+
+    if not entries:
+        return {"status": "error", "records_inserted": 0, "errors": ["No entries provided"]}
+
+    # Build lookups
+    countries = supabase.table("member_states").select("id, iso_code").execute()
+    country_lookup = {c["iso_code"]: c["id"] for c in countries.data}
+
+    indicators = supabase.table("indicators").select("id, code").execute()
+    indicator_lookup = {i["code"]: i["id"] for i in indicators.data}
+
+    inserted = 0
+    errors = []
+
+    for entry in entries:
+        try:
+            iso = str(entry.get("country_iso", "")).upper()
+            code = str(entry.get("indicator_code", ""))
+            year = int(entry.get("year", 0))
+            value = float(entry.get("value", 0))
+
+            country_id = country_lookup.get(iso)
+            indicator_id = indicator_lookup.get(code)
+
+            if not country_id:
+                errors.append(f"Unknown country: {iso}")
+                continue
+            if not indicator_id:
+                errors.append(f"Unknown indicator: {code}")
+                continue
+            if year < 2000 or year > 2030:
+                errors.append(f"Year out of range: {year}")
+                continue
+
+            supabase.table("indicator_values").upsert({
+                "indicator_id": indicator_id,
+                "member_state_id": country_id,
+                "year": year,
+                "value": value,
+                "data_quality": "verified",
+                "source_detail": "Manual form entry",
+            }, on_conflict="indicator_id,member_state_id,year").execute()
+            inserted += 1
+
+        except Exception as e:
+            errors.append(str(e))
+
+    return {
+        "status": "completed" if inserted > 0 else "error",
+        "records_inserted": inserted,
+        "errors": errors[:20],
+    }
 
 
 @router.get("/template")

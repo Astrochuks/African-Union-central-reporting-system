@@ -1,7 +1,8 @@
 """ETL Pipeline endpoints — trigger, status, data sources."""
 
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, Depends
 from app.core.database import get_supabase
+from app.core.auth import require_admin
 from app.services.etl_service import run_etl, seed_database
 from app.services.insights_engine import generate_all_insights
 from app.models.schemas import ETLTriggerRequest
@@ -13,6 +14,7 @@ router = APIRouter(prefix="/pipeline", tags=["ETL Pipeline"])
 async def trigger_pipeline(
     background_tasks: BackgroundTasks,
     request: ETLTriggerRequest | None = None,
+    user: dict = Depends(require_admin),
 ):
     """
     Trigger a full ETL run: Extract from World Bank → Transform → Load → Generate Insights.
@@ -33,7 +35,7 @@ async def trigger_pipeline(
 
 
 @router.post("/seed")
-async def seed_db():
+async def seed_db(user: dict = Depends(require_admin)):
     """Seed the database with aspirations, goals, member states, and indicator definitions."""
     result = await seed_database()
     return result
