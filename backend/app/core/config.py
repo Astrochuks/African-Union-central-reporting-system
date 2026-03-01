@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     API_PREFIX: str = "/api/v1"
 
     # CORS
-    CORS_ORIGINS: str = '["http://localhost:3000","http://localhost:8000"]'
+    CORS_ORIGINS: str = '["*"]'
 
     # Logging
     LOG_LEVEL: str = "INFO"
